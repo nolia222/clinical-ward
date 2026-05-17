@@ -1,1 +1,302 @@
+انسخي هذا كامل والصقيه داخل index.html 👇
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clinical Deterioration — Bedside Micro-Learning</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#f2f4f8;
+}
+
+.header{
+background:#e63946;
+color:white;
+padding:20px;
+}
+
+.header h1{
+margin:0;
+font-size:28px;
+}
+
+.header p{
+margin-top:5px;
+font-size:14px;
+opacity:0.9;
+}
+
+.banner{
+background:#ffd166;
+padding:15px;
+font-weight:bold;
+font-size:16px;
+color:#333;
+}
+
+.flow{
+background:#16162d;
+color:white;
+padding:12px;
+text-align:center;
+font-weight:bold;
+}
+
+.cards{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px;
+padding:20px;
+}
+
+.card{
+background:white;
+border-radius:16px;
+padding:20px;
+box-shadow:0 4px 10px rgba(0,0,0,0.15);
+cursor:pointer;
+transition:0.2s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+.blue{border-top:8px solid #1d6fa4;}
+.green{border-top:8px solid #2a9d6f;}
+.purple{border-top:8px solid #7b2fbe;}
+.red{border-top:8px solid #e63946;}
+
+.card h3{
+margin:10px 0;
+}
+
+.tap{
+margin-top:15px;
+font-weight:bold;
+font-size:13px;
+}
+
+.modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+justify-content:center;
+align-items:flex-end;
+}
+
+.modal-content{
+background:white;
+width:100%;
+max-width:600px;
+border-radius:20px 20px 0 0;
+padding:25px;
+max-height:85vh;
+overflow:auto;
+animation:slideUp 0.3s ease;
+}
+
+@keyframes slideUp{
+from{
+transform:translateY(100%);
+}
+to{
+transform:translateY(0);
+}
+}
+
+.close{
+float:right;
+font-size:24px;
+cursor:pointer;
+}
+
+.section{
+margin-top:20px;
+padding:15px;
+border-radius:12px;
+background:#f7f7f7;
+}
+
+.redbg{background:#ffe5e5;}
+.bluebg{background:#e3f2fd;}
+.greenbg{background:#e5fff1;}
+.purplebg{background:#f2e8ff;}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+<h1>⚡ Clinical Deterioration</h1>
+<p>Surgical Ward · Bedside Micro-Learning</p>
+</div>
+
+<div class="banner">
+⚠️ Delaying escalation increases workload later.
+</div>
+
+<div class="flow">
+≥2 V/S Abnormal → Assess → SBAR → Escalate Now
+</div>
+
+<div class="cards">
+
+<div class="card blue" onclick="openModal('m1')">
+<h3>🔍 Recognise Deterioration</h3>
+<p>V/S normal ranges + ≥2 abnormal rule</p>
+<div class="tap">Tap to open →</div>
+</div>
+
+<div class="card green" onclick="openModal('m2')">
+<h3>📋 SBAR — Say This Now</h3>
+<p>Full SBAR with examples ready to say</p>
+<div class="tap">Tap to open →</div>
+</div>
+
+<div class="card purple" onclick="openModal('m3')">
+<h3>⚡ Response Pathway</h3>
+<p>4 steps from detection to action</p>
+<div class="tap">Tap to open →</div>
+</div>
+
+<div class="card red" onclick="openModal('m4')">
+<h3>🚨 Red Flags — Call MET Now</h3>
+<p>Critical signs requiring immediate MET call</p>
+<div class="tap">Tap to open →</div>
+</div>
+
+</div>
+
+<!-- Modal 1 -->
+
+<div class="modal" id="m1">
+<div class="modal-content">
+<span class="close" onclick="closeModal('m1')">✕</span>
+
+<h2>🔍 Recognise Deterioration</h2>
+
+<div class="section bluebg">
+<b>Normal V/S</b><br><br>
+RR: 12–20<br>
+HR: 60–100<br>
+SpO₂: ≥95%<br>
+SBP: 90–140
+</div>
+
+<div class="section redbg">
+<b>≥2 abnormal vital signs = escalate now.</b>
+</div>
+
+</div>
+</div>
+
+<!-- Modal 2 -->
+
+<div class="modal" id="m2">
+<div class="modal-content">
+<span class="close" onclick="closeModal('m2')">✕</span>
+
+<h2>📋 SBAR</h2>
+
+<div class="section greenbg">
+<b>Situation</b><br>
+I am concerned about this patient.
+</div>
+
+<div class="section">
+<b>Background</b><br>
+Post-op day, meds, labs, output.
+</div>
+
+<div class="section purplebg">
+<b>Assessment</b><br>
+RR, HR, SpO₂, BP abnormal.
+</div>
+
+<div class="section redbg">
+<b>Recommendation</b><br>
+Please review immediately.
+</div>
+
+</div>
+</div>
+
+<!-- Modal 3 -->
+
+<div class="modal" id="m3">
+<div class="modal-content">
+<span class="close" onclick="closeModal('m3')">✕</span>
+
+<h2>⚡ Response Pathway</h2>
+
+<div class="section bluebg">
+1️⃣ Identify abnormal V/S
+</div>
+
+<div class="section greenbg">
+2️⃣ Assess patient
+</div>
+
+<div class="section purplebg">
+3️⃣ Use SBAR
+</div>
+
+<div class="section redbg">
+4️⃣ Act + Monitor + Document
+</div>
+
+</div>
+</div>
+
+<!-- Modal 4 -->
+
+<div class="modal" id="m4">
+<div class="modal-content">
+<span class="close" onclick="closeModal('m4')">✕</span>
+
+<h2>🚨 Red Flags</h2>
+
+<div class="section bluebg">
+🫁 RR &lt;8 or &gt;30<br>
+SpO₂ &lt;90%
+</div>
+
+<div class="section redbg">
+❤️ SBP &lt;90<br>
+HR &gt;130
+</div>
+
+<div class="section purplebg">
+🧠 Sudden confusion<br>
+Seizure<br>
+GCS drop
+</div>
+
+</div>
+</div>
+
+<script>
+
+function openModal(id){
+document.getElementById(id).style.display='flex';
+}
+
+function closeModal(id){
+document.getElementById(id).style.display='none';
+}
+
+</script>
+
+</body>
+</html>
